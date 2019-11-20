@@ -1,0 +1,60 @@
+@import '../../src//scss/main';
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    // document's box-sizing
+    box-sizing: inherit;
+}
+
+html {
+    // inherited box-sizing from document.
+    // "border-box" means that it includes all width + border + padding
+    //  inside of box-sizing: ;
+
+
+    /* 
+    - content-box: This div has a width of 300px. But the full width is 300px + 20px (left and right border) + 60px (left and right padding) = 380px!
+    - border-box: Here, the full width is 300px, no matter what!
+    */
+    /* html does not specify the value */
+    box-sizing: border-box;
+    font-size: 62.5%; // 1rem = 10px; => 10px / 16px (browser default) = 62.5 
+}
+
+body {
+    // 'Open Sans' from google font
+    // If google font is not available, use sans-serif
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--color-grey-dark-2);
+    background-image: linear-gradient(to right bottom, var(--color-primary-light), 
+        var(--color-primary-dark));
+
+    // cover: Resize the background image to cover the entire container, even if it has to stretch the image
+    // 100%: same as above
+    // auto: orginal size
+    background-size: cover;
+
+    // because currently we have "Ready" div only
+    // Therefore the screen has a lot of line to fill out.
+    // In order to prevent this lines: "no-repeat"
+    background-repeat: no-repeat;
+    
+    // Above Or
+    // Use view-port!
+    // minimum height 100% of view port
+    min-height: 100vh; 
+
+    // instead of variable,
+    // we can use css variable
+    // 
+    // background-color: var(--color-primary);
+
+}

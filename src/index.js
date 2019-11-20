@@ -1,17 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import App from './App';
-// import App from './FlexBox_Basic_Practice/App';
+import App from './App';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-// import reducers from './reducers';
-import App from './FlexBox_Basic_Practice/App';
-// const store 
+// import App from './FlexBox_Basic_Practice/App';
 
-
-// const store = createStore(reducers);
-// <Provider store={store}>
-// </Provider>
 ReactDOM.render(
         <App />
     , 

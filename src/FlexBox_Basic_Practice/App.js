@@ -89,7 +89,32 @@ const styles = {
         
         // Making Cascade structure
         // it must be in flex container!
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
+
+        // With flexWrap, the elements are allocated at the 
+        // AlignContent must be used "flexWrap". Then it impacts all the rows
+        //  that are assigned in responsive
+        // Please, mind that "flex-end" and "flex-start" are working when the
+        //  height is given and that height has engough space.
+
+        // On the other hand, alignItem is only working for a single row.
+        // alignContent: 'flex-start'
+
+        // alignContent: 'flex-end'
+        // alignContent: 'center'
+
+        // making the space has the same height
+        // alignContent: 'flex-around'
+
+        // One is at the top, and the other is bottom
+        // alignContent: 'space-between'
+
+        // It streches on the basis of height, not each row
+        alignContent: 'stretch' // default
+
+
+
+
     },
 
     item: {
