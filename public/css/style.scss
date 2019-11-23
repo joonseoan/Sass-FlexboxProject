@@ -40,6 +40,9 @@ body {
     // cover: Resize the background image to cover the entire container, even if it has to stretch the image
     // 100%: same as above
     // auto: orginal size
+
+    // it covers body and the exsiting html elements only
+    // Then, it fills up the entire body with html element over and over.
     background-size: cover;
 
     // because currently we have "Ready" div only

@@ -1,0 +1,21 @@
+
+.container {
+    // When width is smaller than 120rem, it is still 120rem
+    // min-width: 120rem;
+    // When width is larger than 120 rem, it is still 120rem
+    max-width: 120rem;
+
+    // from div from body(Actually "div" in index.js) 
+    // auto ---> when only block to block element
+    margin: 8rem auto;
+
+    background-color: var(--color-grey-light-2);
+
+    // 0: x direction
+    // 2rem; y direction
+    // 6rem: blur
+    // rgba :color + opacity
+    box-shadow: var(--shadow-dark); 
+    min-height: 50rem;
+
+}
