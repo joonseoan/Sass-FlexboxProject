@@ -1,6 +1,39 @@
 .sidebar {
+    height: 80rem;
     background-color: var(--color-grey-dark-1);
     // So far even flex shrink 1 does not work
     //  because the 18% relative value 
-    flex: 0 0 18%; 
+    flex: 0 0 18%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+/////////////// Side Navigation
+
+.side-nav {
+
+    &__item {
+
+        &__link {
+
+            &__icon {
+                width: 1.75rem;
+                height: 1.75rem;
+            }
+
+        }
+
+    }
+}
+
+
+///////////////// Legal
+.legal {
+    font-size: 1.2rem;
+    color: var(--color-grey-light-4);
+    text-align: center;
+    padding: 2.5rem;
 }

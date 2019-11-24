@@ -1,0 +1,17 @@
+ we will use icomoon: https://icomoon.io/
+
+ 1. Go to free plan
+ 2. Click Add libraryies
+ 3. Take a look at free plans and select a plan we want to use
+ 4. Select icons we want to use
+ 5. Click "Generate SVG & More"
+ 6. Click "setting icon" in left bottom for file format -- Close it. we will not use it
+ 7. Click SVG download at the left-bottom corner again
+ 8. Unpress it
+ 9. Copy symbole-defs.svg, "sprite" (which is connecting to the server to get the selected svg file)
+ 10. Copy and SVG folder 
+ 11. Paste both above inside of img folder in the project
+ 12. change file name, "symbole-defs.svg" into "sprite.svg"
+  
+
+

@@ -43,8 +43,6 @@ const styles = {
         // controls the item's position inside of content. 
 
 
-        // flexDirection: 'column',
-
         // [ Justify Contents controls space vertically and horizontally]
         //  At the center of a row
         justifyContent: 'center',
@@ -65,13 +63,13 @@ const styles = {
         // left side
         // justifyContent: 'flex-start'
 
-        // itemss are allocated vertically at the center.
-        //      regardless of the height.
-
         // [ IMPORTANT ]
-        // alignItems controls position of X and Y
+        // alignItems controls the contents inside of item with X and Y coordinates
         //  for instance "center" means that X value at the center
         //  and Y value is at the center.
+
+        // itemses are allocated vertically at the center.
+        //      regardless of the height.
         alignItems: 'center',
 
         // at the top
@@ -91,9 +89,11 @@ const styles = {
         // it must be in flex container!
         flexWrap: 'wrap',
 
-        // With flexWrap, the elements are allocated at the 
-        // AlignContent must be used "flexWrap". Then it impacts all the rows
+        // With flexWrap, the elements are allocated with 
+        // AlignContent that must be used "flexWrap". 
+        // Then it impacts all the rows
         //  that are assigned in responsive
+
         // Please, mind that "flex-end" and "flex-start" are working when the
         //  height is given and that height has engough space.
 
@@ -111,10 +111,6 @@ const styles = {
 
         // It streches on the basis of height, not each row
         alignContent: 'stretch' // default
-
-
-
-
     },
 
     item: {
@@ -125,6 +121,7 @@ const styles = {
         fontSize: '40px',
         
         // flexGrow: 1,
+
         // Occupying all space defined (width, height)
         // short-cut of flexGrow 
         // flex: 1
@@ -155,16 +152,17 @@ const styles = {
 
         // Higher priority than flex 1 in "i1 class"
         // Occupies 20% of row space.
-
         /* 
             Space flex 1 will shrink as much as the extension of this class element.
         */ 
         // flexBasis: '20%',
 
+        // [ IMPORTANT ]
         // Even when we use absolute value, it is decreasing,
         //      after flex 1 is the minimizing the size.
         // flexBasis: '200px',
 
+        // [ IMPORTANT ]
         // Flex shrink "1" means it can be responsive in terms of the browser size.
         // Flex shrink "0" means it is not responsive and has a fixed size
         // flexShrink: '1' 
