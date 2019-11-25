@@ -1,6 +1,4 @@
-@import '../Components/App.scss';
-@import '../Components/Header/Header';
-@import '../Components/Contents/Contents';
+@import '../Components/App';
 
 :root {
     --color-primary: #eb2f64;
@@ -18,8 +16,56 @@
 
     // shadow dark
     --shadow-dark: 0 2rem 6rem rgba(0,0,0,.3);
+    --shadow-light: 0 2rem 5rem rgba(0,0,0,.06);
+
+    --line: 1px solid var(--color-grey-light-2);
 }
 
+/////////////////// Button ////////////////////
+
+.btn-inline {
+    border: none;
+    color: var(--color-primary);
+    // from html font-size which is 62.5%
+    font-size: inherit;
+    // border uses the exactly same text color.
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 2px;
+    display: inline-block;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all .2s;
+
+    &:hover {
+        color: var(--color-grey-dark-1);
+    }
+
+    &:focus {
+        outline: none;
+        // infinit: repeat the animation over an over.
+        animation: pulsate 1s infinite;
+    }  
+}
+
+/// Without the event, we can make animation
+// "pulsate" is a variable name
+@keyframes pulsate {
+
+    0% {
+        transform: scale(1);
+        box-shadow: none;
+    }
+
+    50% {
+        transform: scale(1.05); // larger than the defined one
+        box-shadow: 0 1rem 4rem rgba(0,0,0,.25);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: none;
+    }
+}
 
 
 

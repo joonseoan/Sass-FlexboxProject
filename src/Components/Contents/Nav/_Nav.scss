@@ -1,5 +1,4 @@
 .sidebar {
-    height: 80rem;
     background-color: var(--color-grey-dark-1);
     // So far even flex shrink 1 does not work
     //  because the 18% relative value 
@@ -15,18 +14,121 @@
 
 .side-nav {
 
+    font-size: 1.4rem;
+    list-style: none;
+    margin-top: 3.5rem;
+
     &__item {
+        position: relative;
 
-        &__link {
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0; 
+            height: 100%;
+            width: 3px;
+            background-color: var(--color-primary);
 
-            &__icon {
-                width: 1.75rem;
-                height: 1.75rem;
-            }
-
+            // scaleY: animated y coordinate (y length scales up)
+            transform: scaleY(0);
+            // the start point of anmmation
+            // the default is center
+            transform-origin: center;
+            transition: transform .2s,
+                        width .4s cubic-bezier(1,0,0,1) .2s,
+                        // when start doing width
+                        //  .4s delays after scalyY(0) and then 
+                        //  start width and finish width in ".2"
+                        
+                        // we can use cubit bezier for starting fast and filling up slow
+                        // 
+                        // width .4s, cubic-bezier(1,0,0,1) .2s;
+                        
+                        // [IMPORTANT] 
+                        // We can specify each attributes here like width, and background color
+                        background-color .1s;
         }
 
+        &:not(:last-child) {
+            margin-bottom: .5rem;
+        }
+
+        // Highligted "hotel" item class first
+        &--active::before,
+        // it is hover about before above
+        &:hover::before {
+            transform: scale(1);
+            // fills up <li> with primary color
+            // "with above" 
+            // width: 3px;
+            // background-color: var(--color-primary);
+            width: 100%;
+        }
+
+        &:active::before {
+            background-color: var(--color-primary-light);
+        }
+
+        // pararel relationship
+        &__link,
+        &__:visited {
+            color: var(--color-grey-light-1);
+            text-decoration: none;
+            text-transform: uppercase;
+            
+            // [IMPORTANT]
+            // z-index is only working with position definition
+            position: relative;
+            // to be at the top when sliding aniation above in item
+            // for instance, "item" class is a parent,
+            // Then, it the letters of link class will disapprea
+            //  when sliding animation is running.
+            z-index: 10;
+
+            // to make a padding
+            display: block;
+            padding: 1.5rem 3rem;
+
+            // to make icon and link verticall aligh at center
+            display: flex;
+            align-items: center;
+        }
+
+        /* 
+            When hovering, it only changes __link class
+            which is not including icon
+        */
+        // &__link:hover {
+        //     color: orangered
+        // }
+
+        &__link__icon {
+            width: 1.75rem;
+            height: 1.75rem;
+            margin-right: 2rem;
+
+            // [************IMPORTANT]
+            // color of the current element || parent element
+            // it just makes both link and icon classes change the color when hovering
+            // because of it has a parent value
+            fill: currentColor;
+
+            // it just makes only the link class changes the color when hovering
+            // fill: var(--color-grey-light-1);; 
+        }
+        
     }
+
+    // &__item::before {
+    //     content: "";
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0; 
+    //     height: 100%;
+    //     width: 3px;
+    //     background-color: var(--color-primary);
+    // }
 }
 
 

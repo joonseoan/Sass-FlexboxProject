@@ -1,0 +1,117 @@
+
+////////////////////// Gallery ///////////////////
+.gallery {
+    display: flex;
+    
+    // We do not need to configute justify-content;
+    //  because it is image size is bigger thatn the space given here.
+    // justify-content: space-between;
+    
+    &__item {
+
+        // width: 100%;
+
+        &__photo {
+            // To prevent overflow outside the space given
+            width: 100%;
+            
+            // [IMPORTANT]
+            // Must use "block" element
+            // to prevent the white space underneaths when we use inline or inline-block
+            display: block;
+        }
+    }
+}
+
+/////////////////// Overview /////////////////////
+.overview {
+
+    border-bottom: var(--line);
+
+    display: flex;
+    // justify-content: space-between;
+    align-items: center;
+
+    &__heading {
+        font-size: 2.25rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 1.5rem 3rem;
+        
+    }
+
+    &__stars {
+
+        // 2)
+        // The best way is to use margin-right, or margin-left: 
+        // to take up the necessary sapce,
+        // to deal with the rest of space as a margin
+
+        margin-right: auto;
+
+        // 1) we can use "flex: 1" to fully increase width
+        //  taking the entire white space up
+
+        // [Problem] 
+        // But in this case, the element space is too large
+        //  so we can't define the background color
+        // By extending the width in stars class,
+        // we can loger distance to location
+        // flex: 1 0 0;
+
+        // Underneath space
+        // Please, bear in mind that svg icons are on the basis of inline.
+        // Therefore it generates a little space underneath.
+        // To prevent this space, we can still use flex box
+        display: flex;
+        align-items: center;        
+        
+        &__icon {
+            width: 1.75rem;
+            height: 1.75rem;
+            fill: var(--color-primary);
+        }
+    }
+
+    &__location {
+
+        // Now, it gives the inheritance to font in "Button"
+        font-size: 1.2rem;
+        
+        display: flex;
+        align-items: center;
+
+        &__icon {
+            width: 1.75rem;
+            height: 1.75rem;
+            fill: var(--color-grey-light-1);
+            margin-right: .5rem;   
+        }
+    }
+
+    &__rating {
+        background-color: var(--color-primary);
+        color: #ffffff;
+        margin-left: 3rem;
+        padding: 2.25rem;
+        text-transform: uppercase;
+        // to fill out the entire element
+        align-self: stretch;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &__rating-average {
+            font-size: 2.25rem;
+            font-weight: 300;
+        }
+
+        &__rating-count {
+            font-size: .8rem;
+            margin-bottom: -5px;
+        }
+    }
+}

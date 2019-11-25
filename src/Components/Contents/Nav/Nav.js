@@ -4,7 +4,8 @@ const Nav = props => {
     return(
         <nav className="sidebar">
             <ul className="side-nav">
-                <li className="side-nav__item">
+            {/* side-nav__item--active: modifier  */}
+                <li className="side-nav__item side-nav__item--active">
                     <a href="#" className="side-nav__item__link">
                         <svg className="side-nav__item__link__icon">
                             <use href="img/sprite.svg#icon-home" />
