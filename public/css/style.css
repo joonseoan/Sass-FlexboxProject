@@ -137,9 +137,9 @@
   display: flex;
   padding: 4.5rem;
   background-color: var(--color-grey-light-1);
-  border-bottom: var(--line); }
+  border-bottom: var(--line);
+  font-size: 1.4rem; }
   .detail__description {
-    font-size: 1.4rem;
     background-color: #ffffff;
     box-shadow: var(--shadow-light);
     padding: 3rem;
@@ -187,8 +187,66 @@
         .detail__description__recommend__friends__photo:not(:last-child) {
           margin-right: -1.5rem; }
   .detail__user-reviews {
-    background-color: yellowgreen;
-    flex: 1; }
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; }
+    .detail__user-reviews__review {
+      background-color: yellowgreen;
+      box-shadow: var(--shadow-light);
+      padding: 3rem;
+      margin-bottom: 3.5rem;
+      position: relative;
+      overflow: hidden;
+      /* 
+                p:before { content:"\201C";}
+            */ }
+      .detail__user-reviews__review::before {
+        content: "\201C";
+        position: absolute;
+        top: -2.15rem;
+        left: 0;
+        font-size: 20rem;
+        line-height: 1;
+        color: var(--color-grey-light-2);
+        font-family: sans-serif;
+        z-index: 1; }
+      .detail__user-reviews__review__text {
+        position: relative;
+        z-index: 10;
+        margin-bottom: 2rem; }
+      .detail__user-reviews__review__user {
+        display: flex;
+        align-items: center; }
+        .detail__user-reviews__review__user__photo {
+          height: 4.5rem;
+          width: 4.5rem;
+          border-radius: 50%;
+          margin-right: 1.5rem; }
+        .detail__user-reviews__review__user__user-box {
+          margin-right: auto; }
+          .detail__user-reviews__review__user__user-box__user-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: .4rem; }
+          .detail__user-reviews__review__user__user-box__date {
+            font-size: 1rem;
+            color: var(--color-grey-dark-3); }
+        .detail__user-reviews__review__user__rating {
+          color: var(--color-primary);
+          font-size: 2.2rem;
+          font-weight: 300; }
+
+.cta {
+  padding: 3.5rem;
+  text-align: center; }
+  .cta__book-now {
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem; }
 
 .hotel-view {
   background-color: orange;
@@ -286,8 +344,13 @@
   background-color: transparent;
   cursor: pointer;
   transition: all .2s; }
+  .btn-inline span {
+    margin-left: 3px;
+    transition: margin-left .2s; }
   .btn-inline:hover {
     color: var(--color-grey-dark-1); }
+    .btn-inline:hover span {
+      margin-left: 8px; }
   .btn-inline:focus {
     outline: none;
     animation: pulsate 1s infinite; }
@@ -302,6 +365,39 @@
   100% {
     transform: scale(1);
     box-shadow: none; } }
+
+.btn {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: 100px;
+  border: none;
+  background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer; }
+  .btn > * {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    transition: all .2s; }
+  .btn__visible {
+    padding: 2rem 7.5rem; }
+  .btn__invisible {
+    padding: 2rem 0;
+    position: absolute;
+    top: -100%;
+    left: 0; }
+  .btn:hover {
+    background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark)); }
+  .btn:hover .btn__visible {
+    transform: translateY(100%); }
+  .btn:hover .btn__invisible {
+    top: 0; }
+  .btn:focus {
+    outline: none;
+    animation: pulsate 1s infinite; }
 
 * {
   margin: 0;

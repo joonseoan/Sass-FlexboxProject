@@ -5,9 +5,9 @@
     padding: 4.5rem;
     background-color: var(--color-grey-light-1);
     border-bottom: var(--line);
+    font-size: 1.4rem;
 
     &__description {
-        font-size: 1.4rem;
         background-color: #ffffff;
         box-shadow: var(--shadow-light);
         padding: 3rem;
@@ -119,15 +119,114 @@
                         margin-right: -1.5rem;
                     }
                 }
-
             }
         }
     }
 
+    ///////////////////////////// Review /////////////////////////////
     &__user-reviews {
-        background-color: yellowgreen;
-        
         // fully take up the rest of the space, 40%
         flex: 1;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        //  [ IMPORTANT ]
+        // In this case, it is a center in horizontal
+        // for figure 1, figure 2, and button 
+        // (not the nested chidren of figure 1 and figure 1)
+        align-items: center;
+
+        &__review {
+            
+            background-color: yellowgreen;
+            box-shadow: var(--shadow-light);
+            padding: 3rem;
+            margin-bottom: 3.5rem;
+            position: relative;
+            overflow: hidden;
+
+            // Visit: "https://css-tricks.com/snippets/html/glyphs/"
+            // we can use left quotation mark
+            /* 
+                p:before { content:"\201C";}
+            */
+
+            &::before {
+                content: "\201C";
+                position: absolute;
+                top: -2.15rem;
+                left: 0;
+                font-size: 20rem;
+                // [ IMPORTANT ]!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+                // without line-height definition,
+                //  it is still 1.6rem that is stretched 1.6 times than "20 rem" above
+                // We must override line-height here to the value from body element that defines line-height: 1.6;
+                line-height: 1;
+                color: var(--color-grey-light-2);
+                font-family: sans-serif;
+                z-index: 1;
+            }
+
+
+            &__text {
+                position: relative;
+                z-index: 10;
+                margin-bottom: 2rem;
+
+            }
+
+            &__user {
+                display: flex;
+                align-items: center;
+
+                &__photo {
+
+                    height: 4.5rem;
+                    width: 4.5rem;
+                    border-radius: 50%;
+                    margin-right: 1.5rem;
+                }
+
+                &__user-box {
+                    margin-right: auto;
+                    
+                    &__user-name {
+                        font-size: 1.1rem;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        margin-bottom: .4rem;
+                    }
+
+                    &__date {   
+                        font-size: 1rem;
+                        color: var(--color-grey-dark-3);
+                    }
+                }
+
+                &__rating {
+                    color: var(--color-primary);
+                    font-size: 2.2rem;
+                    font-weight: 300;
+
+                }
+
+            }
+        }
+    }
+}
+
+    /////////////////////////////////////// CALL TO ACTION //////////////////
+.cta {
+    padding: 3.5rem;
+    text-align: center;
+
+    &__book-now {
+        font-size: 2rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        margin-bottom: 2.5rem;
+
     }
 }
