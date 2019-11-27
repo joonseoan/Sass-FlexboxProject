@@ -1,6 +1,11 @@
 @import './Main/Main';
 @import './Nav/Nav';
+@import '../../scss/variables';
 
 .contents {
     display: flex;
+
+    @media only screen and (max-width: $bp-middle) {
+        flex-direction: column;
+    }
 }

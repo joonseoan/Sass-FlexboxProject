@@ -65,7 +65,7 @@ const DetailBody = props => {
                         </figcaption>
                     </figure>
                     <button className="btn-inline">
-                        Show All <span>&rarr;</span>
+                        Show All <span className="btn-inline__test">&rarr;</span>
                     </button>
                 </div> 
             </div>

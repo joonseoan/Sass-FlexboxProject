@@ -139,12 +139,19 @@
   background-color: var(--color-grey-light-1);
   border-bottom: var(--line);
   font-size: 1.4rem; }
+  @media only screen and (max-width: 56.25em) {
+    .detail {
+      padding: 3rem; } }
   .detail__description {
     background-color: #ffffff;
     box-shadow: var(--shadow-light);
     padding: 3rem;
     flex: 0 0 60%;
     margin-right: 4.5rem; }
+    @media only screen and (max-width: 56.25em) {
+      .detail__description {
+        padding: 2rem;
+        margin-right: 3rem; } }
     .detail__description__paragraph:not(:last-of-type) {
       margin-bottom: 2rem; }
     .detail__description__list {
@@ -176,8 +183,16 @@
       color: var(--color-grey-dark-3);
       display: flex;
       align-items: center; }
+      @media only screen and (max-width: 40.65rem) {
+        .detail__description__recommend {
+          flex-wrap: wrap;
+          justify-content: center; } }
       .detail__description__recommend__count {
         margin-right: auto; }
+        @media only screen and (max-width: 40.65rem) {
+          .detail__description__recommend__count {
+            margin: 0;
+            margin-bottom: 1.5rem; } }
       .detail__description__recommend__friends__photo {
         height: 4rem;
         width: 4rem;
@@ -185,12 +200,11 @@
         box-sizing: content-box;
         border: 3px solid #ffffff; }
         .detail__description__recommend__friends__photo:not(:last-child) {
-          margin-right: -1.5rem; }
+          margin-right: -2.0rem; }
   .detail__user-reviews {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center; }
     .detail__user-reviews__review {
       background-color: yellowgreen;
@@ -202,6 +216,10 @@
       /* 
                 p:before { content:"\201C";}
             */ }
+      @media only screen and (max-width: 56.25em) {
+        .detail__user-reviews__review {
+          padding: 2rem;
+          margin-bottom: 3rem; } }
       .detail__user-reviews__review::before {
         content: "\201C";
         position: absolute;
@@ -240,8 +258,11 @@
           font-weight: 300; }
 
 .cta {
-  padding: 3.5rem;
+  padding: 3.5rem 0;
   text-align: center; }
+  @media only screen and (max-width: 56.25em) {
+    .cta {
+      padding: 2.5rem 0; } }
   .cta__book-now {
     font-size: 2rem;
     font-weight: 300;
@@ -263,12 +284,20 @@
   font-size: 1.4rem;
   list-style: none;
   margin-top: 3.5rem; }
+  @media only screen and (max-width: 56.25em) {
+    .side-nav {
+      margin: 0;
+      display: flex;
+      align-items: center; } }
   .side-nav__item {
     position: relative;
     /* 
             When hovering, it only changes __link class
             which is not including icon
         */ }
+    @media only screen and (max-width: 56.25em) {
+      .side-nav__item {
+        flex: 1; } }
     .side-nav__item::before {
       content: "";
       position: absolute;
@@ -282,6 +311,9 @@
       transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.1s; }
     .side-nav__item:not(:last-child) {
       margin-bottom: .5rem; }
+      @media only screen and (max-width: 56.25em) {
+        .side-nav__item:not(:last-child) {
+          margin: 0; } }
     .side-nav__item--active::before, .side-nav__item:hover::before {
       transform: scale(1);
       width: 100%; }
@@ -297,6 +329,10 @@
       padding: 1.5rem 3rem;
       display: flex;
       align-items: center; }
+      @media only screen and (max-width: 56.25em) {
+        .side-nav__item__link, .side-nav__item__:visited {
+          justify-content: center;
+          padding: 2rem; } }
     .side-nav__item__link__icon {
       width: 1.75rem;
       height: 1.75rem;
@@ -308,9 +344,15 @@
   color: var(--color-grey-light-4);
   text-align: center;
   padding: 2.5rem; }
+  @media only screen and (max-width: 56.25em) {
+    .legal {
+      display: none; } }
 
 .contents {
   display: flex; }
+  @media only screen and (max-width: 56.25em) {
+    .contents {
+      flex-direction: column; } }
 
 .container {
   max-width: 120rem;
@@ -318,6 +360,10 @@
   background-color: var(--color-grey-light-2);
   box-shadow: var(--shadow-dark);
   min-height: 50rem; }
+  @media only screen and (max-width: 75em) {
+    .container {
+      margin: 0;
+      min-width: 100%; } }
 
 :root {
   --color-primary: #eb2f64;
@@ -416,6 +462,9 @@ html {
   /* html does not specify the value */
   box-sizing: border-box;
   font-size: 62.5%; }
+  @media only screen and (max-width: 68.75em) {
+    html {
+      font-size: 50%; } }
 
 body {
   font-family: 'Open Sans', sans-serif;

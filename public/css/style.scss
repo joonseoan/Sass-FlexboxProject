@@ -1,4 +1,5 @@
 @import '../../src//scss/main';
+@import '../../src/scss/variables';
 
 * {
     margin: 0;
@@ -25,6 +26,11 @@ html {
     /* html does not specify the value */
     box-sizing: border-box;
     font-size: 62.5%; // 1rem = 10px; => 10px / 16px (browser default) = 62.5 
+
+    @media only screen and (max-width: $bp-large) {
+        // in this case, font-size: 1rem is less than 10px
+        font-size: 50%;
+    }
 }
 
 body {

@@ -1,3 +1,5 @@
+@import '../../../scss/_variables';
+
 .sidebar {
     background-color: var(--color-grey-dark-1);
     // So far even flex shrink 1 does not work
@@ -18,9 +20,19 @@
     list-style: none;
     margin-top: 3.5rem;
 
+    @media only screen and (max-width: $bp-middle) {
+        margin: 0;
+        display: flex;
+        align-items: center;
+    }
+
     &__item {
         position: relative;
 
+        @media only screen and (max-width: $bp-middle) {
+            // or width: 100%
+            flex: 1;
+        }
         &::before {
             content: "";
             position: absolute;
@@ -48,10 +60,16 @@
                         // [IMPORTANT] 
                         // We can specify each attributes here like width, and background color
                         background-color .1s;
+
+                        
         }
 
         &:not(:last-child) {
             margin-bottom: .5rem;
+
+            @media only screen and (max-width: $bp-middle) {
+                margin: 0;
+            }
         }
 
         // Highligted "hotel" item class first
@@ -93,6 +111,10 @@
             // to make icon and link verticall aligh at center
             display: flex;
             align-items: center;
+            @media only screen and (max-width: $bp-middle) {
+                justify-content: center;
+                padding: 2rem;
+            }
         }
 
         /* 
@@ -115,7 +137,7 @@
             fill: currentColor;
 
             // it just makes only the link class changes the color when hovering
-            // fill: var(--color-grey-light-1);; 
+            // fill: var(--color-grey-light-1);;
         }
         
     }
@@ -138,4 +160,9 @@
     color: var(--color-grey-light-4);
     text-align: center;
     padding: 2.5rem;
+
+    
+    @media only screen and (max-width: $bp-middle) {
+        display: none;
+    }
 }

@@ -1,3 +1,5 @@
+@import '../../../../scss/variables';
+
 /////////////////// DETAIL ///////////////
 .detail {
 
@@ -7,6 +9,10 @@
     border-bottom: var(--line);
     font-size: 1.4rem;
 
+    @media only screen and (max-width: $bp-middle) {
+        padding: 3rem;
+    }
+
     &__description {
         background-color: #ffffff;
         box-shadow: var(--shadow-light);
@@ -14,6 +20,11 @@
 
         flex: 0 0 60%;
         margin-right: 4.5rem;
+
+        @media only screen and (max-width: $bp-middle) {
+            padding: 2rem;
+            margin-right: 3rem;
+        }
 
         &__paragraph {
             // Regardless of className, the second paragraph is not 
@@ -41,6 +52,7 @@
             // Orginize list in a given space
             flex-wrap: wrap;
             align-items: center;
+
 
             &__item {
                 // [ IMPORTANT ]
@@ -96,9 +108,20 @@
             // justify-content: space-between;
             align-items: center;
 
+            @media only screen and (max-width: $bp-middle-small) {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
             &__count {
                 margin-right: auto;
+
+                @media only screen and (max-width: $bp-middle-small) {
+                    margin: 0;
+                    margin-bottom: 1.5rem;                    
+                }
             }
+
 
             &__friends {
 
@@ -115,8 +138,10 @@
                     box-sizing: content-box;
                     border: 3px solid #ffffff;
 
+
+
                     &:not(:last-child) {
-                        margin-right: -1.5rem;
+                        margin-right: -2.0rem;
                     }
                 }
             }
@@ -130,7 +155,6 @@
 
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
 
         //  [ IMPORTANT ]
         // In this case, it is a center in horizontal
@@ -138,8 +162,7 @@
         // (not the nested chidren of figure 1 and figure 1)
         align-items: center;
 
-        &__review {
-            
+        &__review {            
             background-color: yellowgreen;
             box-shadow: var(--shadow-light);
             padding: 3rem;
@@ -152,6 +175,11 @@
             /* 
                 p:before { content:"\201C";}
             */
+
+            @media only screen and (max-width: $bp-middle) {
+                padding: 2rem;
+                margin-bottom: 3rem;
+            }
 
             &::before {
                 content: "\201C";
@@ -168,7 +196,6 @@
                 font-family: sans-serif;
                 z-index: 1;
             }
-
 
             &__text {
                 position: relative;
@@ -219,8 +246,12 @@
 
     /////////////////////////////////////// CALL TO ACTION //////////////////
 .cta {
-    padding: 3.5rem;
+    padding: 3.5rem 0;
     text-align: center;
+
+    @media only screen and (max-width: $bp-middle) {
+        padding: 2.5rem 0;
+    }
 
     &__book-now {
         font-size: 2rem;
