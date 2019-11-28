@@ -13,6 +13,10 @@
         padding: 3rem;
     }
 
+    @media only screen and (max-width: $bp-middle-small) {
+        flex-direction: column;
+    }
+
     &__description {
         background-color: #ffffff;
         box-shadow: var(--shadow-light);
@@ -24,6 +28,11 @@
         @media only screen and (max-width: $bp-middle) {
             padding: 2rem;
             margin-right: 3rem;
+        }
+
+        @media only screen and (max-width: $bp-middle-small) {
+            margin-bottom: 3rem;
+            margin-right: 0;
         }
 
         &__paragraph {
@@ -78,21 +87,34 @@
                     margin-right: .7rem;
 
                     // Old browser -- we will use this one for the feature supporting
-                    // background-image: url(../img/chevron-thin-right.svg); 
-                    // background-size: cover;
+                    // : can't change the color
+                    background-image: url(../img/chevron-thin-right.svg); 
+                    background-size: cover;
 
-                    // Newer Browser
-                    // We should mask. It is very similar clip or clipper we used.
-                    
-                    // define the entire space first like clip
-                    // mask is for changing color for image we cannot change by using normal css
-                    background-color: var(--color-primary);
-                    -webkit-mask-image: url(../img/chevron-thin-right.svg);
-                    -webkit-mask-size: cover;
-                    // In the future, when the other browser starts supporing mask,
-                    // they can use this one.  
-                    mask-image: url(../img/chevron-thin-right.svg);
-                    mask-size: cover ;
+                    // if -webkit-mask-image: url() is supported currently
+                    //  or  (mask-image: url()) supported in the future
+                    @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+
+                        // Newer Browser
+                        // We should mask. It is very similar clip or clipper we used.
+                        
+                        // define the entire space first like clip
+                        // mask is for changing color for image we cannot change by using normal css
+                        background-color: var(--color-primary);
+                        -webkit-mask-image: url(../img/chevron-thin-right.svg);
+                        -webkit-mask-size: cover;
+                        // In the future, when the other browser starts supporing mask,
+                        // they can use this one.  
+                        mask-image: url(../img/chevron-thin-right.svg);
+                        mask-size: cover;
+                        // when we activate 
+                        /* 
+                            background-image: url(../img/chevron-thin-right.svg); 
+                            background-size: cover; 
+                        */ // above
+                        // It generates an balckk black background image. We need to turn it off.
+                        background-image: none;
+                    }
                 }
 
             }
@@ -122,7 +144,6 @@
                 }
             }
 
-
             &__friends {
 
                 &__photo {
@@ -137,8 +158,6 @@
                     // Therefore, the picture size shrinks.
                     box-sizing: content-box;
                     border: 3px solid #ffffff;
-
-
 
                     &:not(:last-child) {
                         margin-right: -2.0rem;
@@ -179,6 +198,14 @@
             @media only screen and (max-width: $bp-middle) {
                 padding: 2rem;
                 margin-bottom: 3rem;
+            }
+
+            @media only screen and (max-width: $bp-middle-small) {
+                // When sentence is smaller than the given space
+                width: 100%;
+
+                //  flex 1 is here for height because it is column
+                // flex: 1;
             }
 
             &::before {

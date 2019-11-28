@@ -1,3 +1,5 @@
+@import '../../scss/variables';
+
 .header {
     font-size: 1.4rem;
     min-height: 7rem;
@@ -10,12 +12,29 @@
 
     // allocate contents insid of items
     align-items: center;
+
+    @media only screen and (max-width: $bp-small) {
+        // padding: 1.25rem;
+        flex-wrap: wrap;
+        
+        /* Height  control*/
+        // always use align-items instead of margin even for vertically centered.
+        align-items: space-around;
+        // engough space
+        height: 11rem;
+
+        // Horizontal Control
+        justify-content: center;
+    }
 }
 
 // it is inside of header but it is defined as a separate component
 .logo {
     height: 3.25rem;
     margin-left: 2rem;
+    @media only screen and (max-width: $bp-small) {
+        margin-right: auto;
+    }
 }
 
 //////////////////////////////////// SEARCH /////////////////////////////
@@ -31,6 +50,14 @@
     // centering items tags with x coordinate 
     justify-content: center;
 
+    @media only screen and (max-width: $bp-small) {
+        order: 1;
+        // margin-top: 1.5rem;
+        flex: 0 0 80%;
+        background-color: var(--color-grey-light-2);
+        overflow: hidden;
+    }
+
     &__input {
         // <input /> does not have automatic inherit for the parent.
         // Therefore, we need to maually inherit it from the parent. 
@@ -45,12 +72,13 @@
         // by doing so below, the search button can be on top of input bar
         margin-right: -3.5rem;
         transition: all .2s;
+        
 
         &:focus {
             // outline: when we click input, it generates a html outline.
             outline: none;
             width: 100%;
-            background-color: var(--color-grey-light-3);
+            background-color: var(--color-grey-light-2);
         }
 
         // only working with webkib browser such as chrome and safari
@@ -71,7 +99,6 @@
 
             // ****we cannot control it over here. 
             // background-color: var(--color-grey-light-3);
-
         }
 
         &:active {

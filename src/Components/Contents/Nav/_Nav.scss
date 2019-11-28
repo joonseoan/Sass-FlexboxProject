@@ -115,6 +115,11 @@
                 justify-content: center;
                 padding: 2rem;
             }
+
+            @media only screen and (max-width: $bp-middle-small) {
+                flex-direction: column;
+                padding: 1.5rem .5rem;
+            }
         }
 
         /* 
@@ -138,8 +143,14 @@
 
             // it just makes only the link class changes the color when hovering
             // fill: var(--color-grey-light-1);;
+
+            @media only screen and (max-width: $bp-middle-small) {
+                margin-right: 0;
+                margin-bottom: 1rem;
+                width: 1.25rem;
+                height: 1.25rem;
+            }
         }
-        
     }
 
     // &__item::before {

@@ -1,3 +1,4 @@
+@import '../../../../scss/variables';
 
 ////////////////////// Gallery ///////////////////
 .gallery {
@@ -38,7 +39,12 @@
         text-transform: uppercase;
         letter-spacing: 1px;
         padding: 1.5rem 3rem;
-        
+
+        @media only screen and (max-width: $bp-middle-small) {
+            font-size: 1.8rem;
+            font-weight: 400;
+            padding: 1rem 1.5rem;
+        }
     }
 
     &__stars {
@@ -104,14 +110,28 @@
         justify-content: center;
         align-items: center;
 
+        @media only screen and (max-width: $bp-middle-small) {
+            padding: 0 1.5rem;
+        }
+
         &__rating-average {
             font-size: 2.25rem;
             font-weight: 300;
+
+            @media only screen and (max-width: $bp-middle-small) {
+                font-size: 1.8rem;
+                font-weight: 400;
+                padding: 0 1.5rem;
+            }
         }
 
         &__rating-count {
             font-size: .8rem;
             margin-bottom: -5px;
+            @media only screen and (max-width: $bp-middle-small) {
+                font-size: .5rem;
+                text-align: center;
+            }
         }
     }
 }
